@@ -11,6 +11,7 @@ def max_popularity(artists):
     artists_detail = open(current_dir / 'data' / '116.json' , encoding='utf-8' )
 
     print(artists_detail)    
+    
 
     
 
