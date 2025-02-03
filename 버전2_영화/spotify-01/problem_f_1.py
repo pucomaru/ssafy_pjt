@@ -7,7 +7,8 @@ from pprint import pprint
 from pathlib import Path
 
 current_dir = Path(__file__).resolve().parent
-
+artist_json = open(current_dir / 'data' / 'artists.json', encoding='utf-8')
+artists_list = json.load(artist_json)
 
 def artists_info(get):
 
@@ -21,11 +22,12 @@ def artists_info(get):
 
 
 
-def get_popular(artists_information_list):
+def get_popular():
     # 여기에 코드를 작성합니다.
+
     artists = []
 
-    numbers = artists_info(artists_information_list)
+    numbers = artists_info(artists_list)
     for i in numbers:
             artists_information={}
 
@@ -42,10 +44,4 @@ def get_popular(artists_information_list):
 
 # 아래의 코드는 수정하지 않습니다.
 if __name__ == '__main__':
-
-    artist_json = open(current_dir / 'data' / 'artists.json', encoding='utf-8')
-    artists_list = json.load(artist_json)
-
-
-    pprint(get_popular(artists_list))
-
+    pprint(get_popular())
